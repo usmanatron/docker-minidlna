@@ -19,4 +19,7 @@ ADD minidlna.conf /etc/minidlna.conf
 # Expose the required ports:
 # UDP 1900 for UPnP
 # 8200 for the web interface
-EXPOSE 1900/udp 8200
+EXPOSE 1900/udp
+EXPOSE 8200
+
+ENTRYPOINT ["/usr/sbin/minidlnad", "-f", "/etc/minidlna.conf"]
